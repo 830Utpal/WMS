@@ -149,7 +149,6 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
           await createUser(user.email, user.name || 'Anonymous User');
         } catch (error) {
           console.error("Error creating user:", error);
-          // Handle the error appropriately, maybe show a message to the user
         }
       }
     } catch (error) {
@@ -183,7 +182,6 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
           await createUser(user.email, user.name || 'Anonymous User');
         } catch (error) {
           console.error("Error creating user:", error);
-          // Handle the error appropriately, maybe show a message to the user
         }
       }
     }

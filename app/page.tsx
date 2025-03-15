@@ -24,3 +24,12 @@ function AnimatedGlobe() {
     </div>
   )
 }
+
+export default function Home() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [impactData, setImpactData] = useState({
+    wasteCollected: 0,
+    reportsSubmitted: 0,
+    tokensEarned: 0,
+    co2Offset: 0
+  });}

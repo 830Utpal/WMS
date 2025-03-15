@@ -11,9 +11,11 @@
     "db:studio": "npx drizzle-kit studio"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.0",
     "@neondatabase/serverless": "^0.10.4",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
+    "@react-google-maps/api": "^2.20.6",
     "@web3auth/base": "^9.7.0",
     "@web3auth/ethereum-provider": "^9.7.0",
     "@web3auth/modal": "^9.7.0",

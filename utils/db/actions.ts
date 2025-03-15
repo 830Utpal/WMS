@@ -1,5 +1,5 @@
 import {db} from "./dbConfig"
-import {Users} from "./schema"
+import {Users, Notifications} from "./schema"
 import {eq,sql,and,desc} from 'drizzle-orm'
 
 export async function createUser(email:string, name:string){
@@ -20,5 +20,14 @@ export async function getUserByEmail(email:string){
     }catch(error){
          console.error('Error fetching user by email',error)
          return null
+    }
+}
+
+export async function getUnreadNotifications(userId:number){
+    try{
+         return await db.select().from(Notifications).where(and(eq(Notifications.userId,userId),eq(Notifications.isRead,false))).execute()
+    }catch(error){
+    console.error('error fetching unread notifications',error)
+    return null
     }
 }

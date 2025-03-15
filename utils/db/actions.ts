@@ -11,3 +11,14 @@ return user;
         return null
     }
 }
+
+
+export async function getUserByEmail(email:string){
+    try{
+           const [user]=await db.select().from(Users).where(eq(Users.email,email)).execute()
+           return user;
+    }catch(error){
+         console.error('Error fetching user by email',error)
+         return null
+    }
+}

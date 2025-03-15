@@ -41,7 +41,7 @@ export default function RewardsPage() {
             setTransactions(fetchedTransactions as Transaction[])
             const fetchedRewards = await getAvailableRewards(fetchedUser.id)
             setRewards(fetchedRewards.filter(r => r.cost > 0)) // Filter out rewards with 0 points
-            const calculatedBalance = fetchedTransactions.reduce((acc, transaction) => {
+            const calculatedBalance = fetchedTransactions.reduce((acc:any, transaction :any) => {
               return transaction.type.startsWith('earned') ? acc + transaction.amount : acc - transaction.amount
             }, 0)
             setBalance(Math.max(calculatedBalance, 0)) // Ensure balance is never negative
